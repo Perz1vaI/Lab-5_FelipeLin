@@ -31,7 +31,7 @@ public class Villano extends Heroe {
 
     @Override
     public String toString() {
-        return "Villano{" + "nombre=" + nombre + '}';
+        return "Nombre: " + nombre + " Debilidad: " + deblilidad;
     }
 
 }

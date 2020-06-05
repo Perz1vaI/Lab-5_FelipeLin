@@ -15,14 +15,14 @@ public class Escuadrones extends Heroe{
 
     protected String nombre;
     protected String base;
-    protected String lider;
+    protected Heroe lider;
     protected String tipo;
     private ArrayList<Heroe> lista = new ArrayList();
 
     public Escuadrones() {
     }
 
-    public Escuadrones(String nombre, String base, String lider, String tipo) {
+    public Escuadrones(String nombre, String base, Heroe lider, String tipo) {
         this.nombre = nombre;
         this.base = base;
         this.lider = lider;
@@ -45,11 +45,11 @@ public class Escuadrones extends Heroe{
         this.base = base;
     }
 
-    public String getLider() {
+    public Heroe getLider() {
         return lider;
     }
 
-    public void setLider(String lider) {
+    public void setLider(Heroe lider) {
         this.lider = lider;
     }
 
@@ -75,7 +75,7 @@ public class Escuadrones extends Heroe{
 
     @Override
     public String toString() {
-        return "Escuadrones{" + "nombre=" + nombre + ", base=" + base + ", lider=" + lider + ", tipo=" + tipo + ", lista=" + lista + '}';
+        return "Nombre: "+nombre + " Lugar: "+ base;
     }
 
 }

@@ -31,7 +31,7 @@ public class SuperHeroe extends Heroe {
 
     @Override
     public String toString() {
-        return nombre;
+        return "Nombre: " + nombre + " Poder: " + poder;
     }
 
 }
