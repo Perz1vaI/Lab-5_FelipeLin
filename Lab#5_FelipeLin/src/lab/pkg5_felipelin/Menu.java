@@ -36,6 +36,13 @@ public class Menu extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
+        popup_lista = new javax.swing.JPopupMenu();
+        lista_modificar_super = new javax.swing.JMenuItem();
+        lista_eliminar_super = new javax.swing.JMenuItem();
+        popup_arbol = new javax.swing.JPopupMenu();
+        popup_lista2 = new javax.swing.JPopupMenu();
+        lista_modificar_vil = new javax.swing.JMenuItem();
+        lista_eliminar_vil = new javax.swing.JMenuItem();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
@@ -86,7 +93,40 @@ public class Menu extends javax.swing.JFrame {
         jt_squads = new javax.swing.JTree();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+
+        lista_modificar_super.setText("jMenuItem1");
+        lista_modificar_super.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lista_modificar_superActionPerformed(evt);
+            }
+        });
+        popup_lista.add(lista_modificar_super);
+
+        lista_eliminar_super.setText("jMenuItem2");
+        lista_eliminar_super.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lista_eliminar_superActionPerformed(evt);
+            }
+        });
+        popup_lista.add(lista_eliminar_super);
+
+        lista_modificar_vil.setText("jMenuItem1");
+        lista_modificar_vil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lista_modificar_vilActionPerformed(evt);
+            }
+        });
+        popup_lista2.add(lista_modificar_vil);
+
+        lista_eliminar_vil.setText("jMenuItem2");
+        lista_eliminar_vil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lista_eliminar_vilActionPerformed(evt);
+            }
+        });
+        popup_lista2.add(lista_eliminar_vil);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -110,6 +150,11 @@ public class Menu extends javax.swing.JFrame {
         });
 
         jl_super.setModel(new DefaultListModel());
+        jl_super.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jl_superMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jl_super);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -215,6 +260,11 @@ public class Menu extends javax.swing.JFrame {
         });
 
         jl_villano.setModel(new DefaultListModel());
+        jl_villano.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jl_villanoMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(jl_villano);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -334,7 +384,7 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel18.setText("Villano");
 
-        jButton4.setText("Agregar al Arbol");
+        jLabel2.setText("Arbol");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -343,40 +393,41 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(12, 12, 12)
-                                .addComponent(tf_squad_nom, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(135, 135, 135)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(12, 12, 12)
-                                .addComponent(tf_squad_base, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(130, 130, 130)
-                                .addComponent(rb_squad_vil)
-                                .addGap(9, 9, 9)
-                                .addComponent(rb_squad_sup)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(12, 12, 12)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(12, 12, 12)
+                                        .addComponent(tf_squad_nom, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(135, 135, 135)
+                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(12, 12, 12)
+                                        .addComponent(tf_squad_base, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(130, 130, 130)
+                                        .addComponent(rb_squad_vil)
+                                        .addGap(9, 9, 9)
+                                        .addComponent(rb_squad_sup))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(37, 37, 37)
+                                .addComponent(jLabel17)
+                                .addGap(142, 142, 142)
+                                .addComponent(jLabel18)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(6, 6, 6))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(jLabel17)
-                .addGap(142, 142, 142)
-                .addComponent(jLabel18)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -403,22 +454,30 @@ public class Menu extends javax.swing.JFrame {
                 .addGap(54, 54, 54)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17)
-                    .addComponent(jLabel18))
+                    .addComponent(jLabel18)
+                    .addComponent(jLabel2))
+                .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane3)
-                            .addComponent(jScrollPane4)
-                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                        .addContainerGap())
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(120, 120, 120)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(249, Short.MAX_VALUE))))
+                    .addComponent(jScrollPane3)
+                    .addComponent(jScrollPane4)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 389, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("Crear Escuadron", jPanel1);
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 801, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 599, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("tab4", jPanel4);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -656,6 +715,80 @@ public class Menu extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton3MouseClicked
 
+    private void jl_superMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_superMouseClicked
+        // TODO add your handling code here:
+        if (jl_super.getSelectedIndex() >= 0) {
+            if (evt.isMetaDown()) {
+                popup_lista.show(evt.getComponent(), evt.getX(), evt.getY());
+            }
+        }
+    }//GEN-LAST:event_jl_superMouseClicked
+
+    private void lista_eliminar_superActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lista_eliminar_superActionPerformed
+        // TODO add your handling code here:
+        if (jl_super.getSelectedIndex() >= 0) {
+            DefaultListModel modelo = (DefaultListModel) jl_super.getModel();
+
+            modelo.remove(jl_super.getSelectedIndex());
+
+            jl_super.setModel(modelo);
+        }
+    }//GEN-LAST:event_lista_eliminar_superActionPerformed
+
+    private void lista_modificar_superActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lista_modificar_superActionPerformed
+        // TODO add your handling code here:
+        if (jl_super.getSelectedIndex() >= 0) {
+            DefaultListModel modelo = (DefaultListModel) jl_super.getModel();
+
+            ((SuperHeroe) modelo.get(jl_super.getSelectedIndex())).setNombre(JOptionPane.showInputDialog("Ingrese el nuevo nombre"));
+            ((SuperHeroe) modelo.get(jl_super.getSelectedIndex())).setPoder(JOptionPane.showInputDialog("Ingrese el nuevo poder"));
+            ((SuperHeroe) modelo.get(jl_super.getSelectedIndex())).setDeblilidad(JOptionPane.showInputDialog("Ingrese la nueva debilidad"));
+            ((SuperHeroe) modelo.get(jl_super.getSelectedIndex())).setFuerza(Integer.parseInt(JOptionPane.showInputDialog("Ingrese la nueva fuerza")));
+            ((SuperHeroe) modelo.get(jl_super.getSelectedIndex())).setAgilidad(Integer.parseInt(JOptionPane.showInputDialog("Ingrese la nueva agilidad fisica")));
+            ((SuperHeroe) modelo.get(jl_super.getSelectedIndex())).setMente(Integer.parseInt(JOptionPane.showInputDialog("Ingrese la nueva agilidad mental")));
+
+            jl_super.setModel(modelo);
+
+        }
+    }//GEN-LAST:event_lista_modificar_superActionPerformed
+
+    private void lista_eliminar_vilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lista_eliminar_vilActionPerformed
+        // TODO add your handling code here:
+          if (jl_villano.getSelectedIndex() >= 0) {
+            DefaultListModel modelo = (DefaultListModel) jl_villano.getModel();
+
+            modelo.remove(jl_villano.getSelectedIndex());
+
+            jl_villano.setModel(modelo);
+        }
+    }//GEN-LAST:event_lista_eliminar_vilActionPerformed
+
+    private void lista_modificar_vilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lista_modificar_vilActionPerformed
+        // TODO add your handling code here:
+        if (jl_villano.getSelectedIndex() >= 0) {
+            DefaultListModel modelo = (DefaultListModel) jl_villano.getModel();
+
+            ((Villano) modelo.get(jl_villano.getSelectedIndex())).setNombre(JOptionPane.showInputDialog("Ingrese el nuevo nombre"));
+            ((Villano) modelo.get(jl_villano.getSelectedIndex())).setPoder(JOptionPane.showInputDialog("Ingrese el nuevo poder"));
+            ((Villano) modelo.get(jl_villano.getSelectedIndex())).setDeblilidad(JOptionPane.showInputDialog("Ingrese la nueva debilidad"));
+            ((Villano) modelo.get(jl_villano.getSelectedIndex())).setFuerza(Integer.parseInt(JOptionPane.showInputDialog("Ingrese la nueva fuerza")));
+            ((Villano) modelo.get(jl_villano.getSelectedIndex())).setAgilidad(Integer.parseInt(JOptionPane.showInputDialog("Ingrese la nueva agilidad fisica")));
+            ((Villano) modelo.get(jl_villano.getSelectedIndex())).setMente(Integer.parseInt(JOptionPane.showInputDialog("Ingrese la nueva agilidad mental")));
+
+            jl_villano.setModel(modelo);
+
+        }
+    }//GEN-LAST:event_lista_modificar_vilActionPerformed
+
+    private void jl_villanoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_villanoMouseClicked
+        // TODO add your handling code here:
+        if (jl_villano.getSelectedIndex() >= 0) {
+            if (evt.isMetaDown()) {
+                popup_lista2.show(evt.getComponent(), evt.getX(), evt.getY());
+            }
+        }
+    }//GEN-LAST:event_jl_villanoMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -696,7 +829,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -707,6 +839,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -717,6 +850,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -728,6 +862,13 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JList<String> jl_super;
     private javax.swing.JList<String> jl_villano;
     private javax.swing.JTree jt_squads;
+    private javax.swing.JMenuItem lista_eliminar_super;
+    private javax.swing.JMenuItem lista_eliminar_vil;
+    private javax.swing.JMenuItem lista_modificar_super;
+    private javax.swing.JMenuItem lista_modificar_vil;
+    private javax.swing.JPopupMenu popup_arbol;
+    private javax.swing.JPopupMenu popup_lista;
+    private javax.swing.JPopupMenu popup_lista2;
     private javax.swing.JRadioButton rb_squad_sup;
     private javax.swing.JRadioButton rb_squad_vil;
     private javax.swing.JTextField tf_squad_base;

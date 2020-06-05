@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author felipelinzhao
  */
-public class Escuadrones extends Heroe{
+public class Escuadrones extends Heroe {
 
     protected String nombre;
     protected String base;
@@ -69,13 +69,9 @@ public class Escuadrones extends Heroe{
         this.lista = lista;
     }
 
-   
-    
-    
-
     @Override
     public String toString() {
-        return "Nombre: "+nombre + " Lugar: "+ base;
+        return "Nombre: " + nombre + " Lugar: " + base;
     }
 
 }
