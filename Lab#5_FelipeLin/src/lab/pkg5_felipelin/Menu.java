@@ -43,6 +43,12 @@ public class Menu extends javax.swing.JFrame {
         popup_lista2 = new javax.swing.JPopupMenu();
         lista_modificar_vil = new javax.swing.JMenuItem();
         lista_eliminar_vil = new javax.swing.JMenuItem();
+        popup_lista_squad1 = new javax.swing.JPopupMenu();
+        squad1_modificar = new javax.swing.JMenuItem();
+        squad1_eliminar = new javax.swing.JMenuItem();
+        popup_lista_squad2 = new javax.swing.JPopupMenu();
+        squad2_modficar = new javax.swing.JMenuItem();
+        squad2_eliminar = new javax.swing.JMenuItem();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
@@ -127,6 +133,38 @@ public class Menu extends javax.swing.JFrame {
             }
         });
         popup_lista2.add(lista_eliminar_vil);
+
+        squad1_modificar.setText("jMenuItem1");
+        squad1_modificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                squad1_modificarActionPerformed(evt);
+            }
+        });
+        popup_lista_squad1.add(squad1_modificar);
+
+        squad1_eliminar.setText("jMenuItem2");
+        squad1_eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                squad1_eliminarActionPerformed(evt);
+            }
+        });
+        popup_lista_squad1.add(squad1_eliminar);
+
+        squad2_modficar.setText("jMenuItem3");
+        squad2_modficar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                squad2_modficarActionPerformed(evt);
+            }
+        });
+        popup_lista_squad2.add(squad2_modficar);
+
+        squad2_eliminar.setText("jMenuItem4");
+        squad2_eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                squad2_eliminarActionPerformed(evt);
+            }
+        });
+        popup_lista_squad2.add(squad2_eliminar);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -371,9 +409,19 @@ public class Menu extends javax.swing.JFrame {
         });
 
         jl_squad1.setModel(new DefaultListModel());
+        jl_squad1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jl_squad1MouseClicked(evt);
+            }
+        });
         jScrollPane3.setViewportView(jl_squad1);
 
         jl_squad2.setModel(new DefaultListModel());
+        jl_squad2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jl_squad2MouseClicked(evt);
+            }
+        });
         jScrollPane4.setViewportView(jl_squad2);
 
         javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Escuadrones");
@@ -499,7 +547,6 @@ public class Menu extends javax.swing.JFrame {
             DefaultListModel modelo = (DefaultListModel) jl_super.getModel();
 
             modelo.remove(jl_super.getSelectedIndex());
-            squad1.remove(jl_super.getSelectedIndex());
 
             jl_super.setModel(modelo);
         }
@@ -528,7 +575,6 @@ public class Menu extends javax.swing.JFrame {
             DefaultListModel modelo = (DefaultListModel) jl_villano.getModel();
 
             modelo.remove(jl_villano.getSelectedIndex());
-            squad2.remove(jl_villano.getSelectedIndex());
 
             jl_villano.setModel(modelo);
         }
@@ -922,6 +968,74 @@ public class Menu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton4MouseClicked
 
+    private void jl_squad1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_squad1MouseClicked
+        // TODO add your handling code here:
+        if (jl_squad1.getSelectedIndex() >= 0) {
+            if (evt.isMetaDown()) {
+                popup_lista_squad1.show(evt.getComponent(), evt.getX(), evt.getY());
+
+            }
+        }
+    }//GEN-LAST:event_jl_squad1MouseClicked
+
+    private void jl_squad2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_squad2MouseClicked
+        // TODO add your handling code here:
+        if (jl_squad2.getSelectedIndex() >= 0) {
+            if (evt.isMetaDown()) {
+                popup_lista_squad2.show(evt.getComponent(), evt.getX(), evt.getY());
+
+            }
+        }
+    }//GEN-LAST:event_jl_squad2MouseClicked
+
+    private void squad1_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_squad1_eliminarActionPerformed
+        // TODO add your handling code here:
+        if (jl_squad1.getSelectedIndex() >= 0) {
+            DefaultListModel modelo = (DefaultListModel) jl_squad1.getModel();
+
+            modelo.remove(jl_squad1.getSelectedIndex());
+
+            jl_squad1.setModel(modelo);
+        }
+    }//GEN-LAST:event_squad1_eliminarActionPerformed
+
+    private void squad2_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_squad2_eliminarActionPerformed
+        // TODO add your handling code here:
+        if (jl_squad2.getSelectedIndex() >= 0) {
+            DefaultListModel modelo = (DefaultListModel) jl_squad2.getModel();
+
+            modelo.remove(jl_squad2.getSelectedIndex());
+
+            jl_squad2.setModel(modelo);
+        }
+    }//GEN-LAST:event_squad2_eliminarActionPerformed
+
+    private void squad1_modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_squad1_modificarActionPerformed
+        // TODO add your handling code here:
+        if (jl_squad1.getSelectedIndex() >= 0) {
+            DefaultListModel modelo = (DefaultListModel) jl_squad1.getModel();
+
+            ((Escuadrones) modelo.get(jl_squad1.getSelectedIndex())).setBase(JOptionPane.showInputDialog(this, "Ingrese la nueva localizacion de la base"));
+            ((Escuadrones) modelo.get(jl_squad1.getSelectedIndex())).setNombre(JOptionPane.showInputDialog(this, "Ingrese el nuevo nombre del escuadron"));
+
+            jl_squad1.setModel(modelo);
+
+        }
+    }//GEN-LAST:event_squad1_modificarActionPerformed
+
+    private void squad2_modficarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_squad2_modficarActionPerformed
+        // TODO add your handling code here:
+        if (jl_squad2.getSelectedIndex() >= 0) {
+            DefaultListModel modelo = (DefaultListModel) jl_squad2.getModel();
+
+            ((Escuadrones) modelo.get(jl_squad2.getSelectedIndex())).setBase(JOptionPane.showInputDialog(this, "Ingrese la nueva localizacion de la base"));
+            ((Escuadrones) modelo.get(jl_squad2.getSelectedIndex())).setNombre(JOptionPane.showInputDialog(this, "Ingrese el nuevo nombre del escuadron"));
+
+            jl_squad2.setModel(modelo);
+
+        }
+    }//GEN-LAST:event_squad2_modficarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1002,8 +1116,14 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JPopupMenu popup_arbol;
     private javax.swing.JPopupMenu popup_lista;
     private javax.swing.JPopupMenu popup_lista2;
+    private javax.swing.JPopupMenu popup_lista_squad1;
+    private javax.swing.JPopupMenu popup_lista_squad2;
     private javax.swing.JRadioButton rb_squad_sup;
     private javax.swing.JRadioButton rb_squad_vil;
+    private javax.swing.JMenuItem squad1_eliminar;
+    private javax.swing.JMenuItem squad1_modificar;
+    private javax.swing.JMenuItem squad2_eliminar;
+    private javax.swing.JMenuItem squad2_modficar;
     private javax.swing.JTextField tf_squad_base;
     private javax.swing.JTextField tf_squad_nom;
     private javax.swing.JTextField tf_super_a;
