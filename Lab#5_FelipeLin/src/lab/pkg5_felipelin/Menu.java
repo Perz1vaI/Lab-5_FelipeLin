@@ -730,6 +730,7 @@ public class Menu extends javax.swing.JFrame {
             DefaultListModel modelo = (DefaultListModel) jl_super.getModel();
 
             modelo.remove(jl_super.getSelectedIndex());
+            squad1.remove(jl_super.getSelectedIndex());
 
             jl_super.setModel(modelo);
         }
@@ -754,10 +755,11 @@ public class Menu extends javax.swing.JFrame {
 
     private void lista_eliminar_vilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lista_eliminar_vilActionPerformed
         // TODO add your handling code here:
-          if (jl_villano.getSelectedIndex() >= 0) {
+        if (jl_villano.getSelectedIndex() >= 0) {
             DefaultListModel modelo = (DefaultListModel) jl_villano.getModel();
 
             modelo.remove(jl_villano.getSelectedIndex());
+            squad2.remove(jl_villano.getSelectedIndex());
 
             jl_villano.setModel(modelo);
         }
