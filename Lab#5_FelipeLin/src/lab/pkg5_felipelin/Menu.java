@@ -94,7 +94,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
+        jButton4 = new javax.swing.JButton();
 
         lista_modificar_super.setText("jMenuItem1");
         lista_modificar_super.addActionListener(new java.awt.event.ActionListener() {
@@ -386,6 +386,13 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel2.setText("Arbol");
 
+        jButton4.setText("Simulacion");
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -400,29 +407,32 @@ public class Menu extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                         .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(12, 12, 12)
+                                .addComponent(tf_squad_nom, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(135, 135, 135)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(12, 12, 12)
-                                        .addComponent(tf_squad_nom, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(135, 135, 135)
-                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(12, 12, 12)
-                                        .addComponent(tf_squad_base, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(130, 130, 130)
+                                        .addComponent(tf_squad_base, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(25, 25, 25)
+                                        .addComponent(jLabel17)
+                                        .addGap(142, 142, 142)
+                                        .addComponent(jLabel18)))
+                                .addGap(82, 82, 82)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(rb_squad_vil)
                                         .addGap(9, 9, 9)
-                                        .addComponent(rb_squad_sup))))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(37, 37, 37)
-                                .addComponent(jLabel17)
-                                .addGap(142, 142, 142)
-                                .addComponent(jLabel18)))
+                                        .addComponent(rb_squad_sup))
+                                    .addComponent(jButton4))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -451,12 +461,13 @@ public class Menu extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(23, 23, 23)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(54, 54, 54)
+                .addGap(49, 49, 49)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17)
                     .addComponent(jLabel18)
-                    .addComponent(jLabel2))
-                .addGap(28, 28, 28)
+                    .addComponent(jLabel2)
+                    .addComponent(jButton4))
+                .addGap(23, 23, 23)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane3)
                     .addComponent(jScrollPane4)
@@ -465,19 +476,6 @@ public class Menu extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Crear Escuadron", jPanel1);
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 801, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 599, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("tab4", jPanel4);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -494,6 +492,64 @@ public class Menu extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void lista_eliminar_superActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lista_eliminar_superActionPerformed
+        // TODO add your handling code here:
+        if (jl_super.getSelectedIndex() >= 0) {
+            DefaultListModel modelo = (DefaultListModel) jl_super.getModel();
+
+            modelo.remove(jl_super.getSelectedIndex());
+            squad1.remove(jl_super.getSelectedIndex());
+
+            jl_super.setModel(modelo);
+        }
+    }//GEN-LAST:event_lista_eliminar_superActionPerformed
+
+    private void lista_modificar_superActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lista_modificar_superActionPerformed
+        // TODO add your handling code here:
+        if (jl_super.getSelectedIndex() >= 0) {
+            DefaultListModel modelo = (DefaultListModel) jl_super.getModel();
+
+            ((SuperHeroe) modelo.get(jl_super.getSelectedIndex())).setNombre(JOptionPane.showInputDialog("Ingrese el nuevo nombre"));
+            ((SuperHeroe) modelo.get(jl_super.getSelectedIndex())).setPoder(JOptionPane.showInputDialog("Ingrese el nuevo poder"));
+            ((SuperHeroe) modelo.get(jl_super.getSelectedIndex())).setDeblilidad(JOptionPane.showInputDialog("Ingrese la nueva debilidad"));
+            ((SuperHeroe) modelo.get(jl_super.getSelectedIndex())).setFuerza(Integer.parseInt(JOptionPane.showInputDialog("Ingrese la nueva fuerza")));
+            ((SuperHeroe) modelo.get(jl_super.getSelectedIndex())).setAgilidad(Integer.parseInt(JOptionPane.showInputDialog("Ingrese la nueva agilidad fisica")));
+            ((SuperHeroe) modelo.get(jl_super.getSelectedIndex())).setMente(Integer.parseInt(JOptionPane.showInputDialog("Ingrese la nueva agilidad mental")));
+
+            jl_super.setModel(modelo);
+
+        }
+    }//GEN-LAST:event_lista_modificar_superActionPerformed
+
+    private void lista_eliminar_vilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lista_eliminar_vilActionPerformed
+        // TODO add your handling code here:
+        if (jl_villano.getSelectedIndex() >= 0) {
+            DefaultListModel modelo = (DefaultListModel) jl_villano.getModel();
+
+            modelo.remove(jl_villano.getSelectedIndex());
+            squad2.remove(jl_villano.getSelectedIndex());
+
+            jl_villano.setModel(modelo);
+        }
+    }//GEN-LAST:event_lista_eliminar_vilActionPerformed
+
+    private void lista_modificar_vilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lista_modificar_vilActionPerformed
+        // TODO add your handling code here:
+        if (jl_villano.getSelectedIndex() >= 0) {
+            DefaultListModel modelo = (DefaultListModel) jl_villano.getModel();
+
+            ((Villano) modelo.get(jl_villano.getSelectedIndex())).setNombre(JOptionPane.showInputDialog("Ingrese el nuevo nombre"));
+            ((Villano) modelo.get(jl_villano.getSelectedIndex())).setPoder(JOptionPane.showInputDialog("Ingrese el nuevo poder"));
+            ((Villano) modelo.get(jl_villano.getSelectedIndex())).setDeblilidad(JOptionPane.showInputDialog("Ingrese la nueva debilidad"));
+            ((Villano) modelo.get(jl_villano.getSelectedIndex())).setFuerza(Integer.parseInt(JOptionPane.showInputDialog("Ingrese la nueva fuerza")));
+            ((Villano) modelo.get(jl_villano.getSelectedIndex())).setAgilidad(Integer.parseInt(JOptionPane.showInputDialog("Ingrese la nueva agilidad fisica")));
+            ((Villano) modelo.get(jl_villano.getSelectedIndex())).setMente(Integer.parseInt(JOptionPane.showInputDialog("Ingrese la nueva agilidad mental")));
+
+            jl_villano.setModel(modelo);
+
+        }
+    }//GEN-LAST:event_lista_modificar_vilActionPerformed
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
@@ -627,47 +683,14 @@ public class Menu extends javax.swing.JFrame {
         lista1++;
     }//GEN-LAST:event_jButton1MouseClicked
 
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+    private void jl_villanoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_villanoMouseClicked
         // TODO add your handling code here:
-        String nombre, poder, debilidad;
-        int fuerza, agilidad, mente;
-        int suma;
-        try {
-            fuerza = Integer.parseInt(tf_super_f.getText());
-            agilidad = Integer.parseInt(tf_super_a.getText());
-            mente = Integer.parseInt(tf_super_m.getText());
-
-            suma = fuerza + agilidad + mente;
-
-            if (suma == 100) {
-                nombre = tf_super_nom.getText();
-                poder = tf_super_poder.getText();
-                debilidad = tf_super_debil.getText();
-
-                DefaultListModel modelo = (DefaultListModel) jl_super.getModel();
-
-                modelo.addElement(new SuperHeroe(nombre, poder, debilidad, new Escuadrones(), fuerza, agilidad, mente));
-
-                jl_super.setModel(modelo);
-
-                squad1.add(new SuperHeroe(nombre, poder, debilidad, new Escuadrones(), fuerza, agilidad, mente));
-                JOptionPane.showMessageDialog(this, "Su super heroe fue agregado con exito!");
-                tf_super_a.setText("");
-                tf_super_debil.setText("");
-                tf_super_f.setText("");
-                tf_super_m.setText("");
-                tf_super_nom.setText("");
-                tf_super_poder.setText("");
-                jTabbedPane1.setEnabledAt(2, true);
-
-            } else {
-                JOptionPane.showMessageDialog(this, "Sus stats no tienen la suma de 100!");
+        if (jl_villano.getSelectedIndex() >= 0) {
+            if (evt.isMetaDown()) {
+                popup_lista2.show(evt.getComponent(), evt.getX(), evt.getY());
             }
-
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Ocurrio un error!");
         }
-    }//GEN-LAST:event_jButton2MouseClicked
+    }//GEN-LAST:event_jl_villanoMouseClicked
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         // TODO add your handling code here:
@@ -712,7 +735,6 @@ public class Menu extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Ocurrio un error!");
         }
-
     }//GEN-LAST:event_jButton3MouseClicked
 
     private void jl_superMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_superMouseClicked
@@ -724,72 +746,181 @@ public class Menu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jl_superMouseClicked
 
-    private void lista_eliminar_superActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lista_eliminar_superActionPerformed
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         // TODO add your handling code here:
-        if (jl_super.getSelectedIndex() >= 0) {
-            DefaultListModel modelo = (DefaultListModel) jl_super.getModel();
+        String nombre, poder, debilidad;
+        int fuerza, agilidad, mente;
+        int suma;
+        try {
+            fuerza = Integer.parseInt(tf_super_f.getText());
+            agilidad = Integer.parseInt(tf_super_a.getText());
+            mente = Integer.parseInt(tf_super_m.getText());
 
-            modelo.remove(jl_super.getSelectedIndex());
-            squad1.remove(jl_super.getSelectedIndex());
+            suma = fuerza + agilidad + mente;
 
-            jl_super.setModel(modelo);
-        }
-    }//GEN-LAST:event_lista_eliminar_superActionPerformed
+            if (suma == 100) {
+                nombre = tf_super_nom.getText();
+                poder = tf_super_poder.getText();
+                debilidad = tf_super_debil.getText();
 
-    private void lista_modificar_superActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lista_modificar_superActionPerformed
-        // TODO add your handling code here:
-        if (jl_super.getSelectedIndex() >= 0) {
-            DefaultListModel modelo = (DefaultListModel) jl_super.getModel();
+                DefaultListModel modelo = (DefaultListModel) jl_super.getModel();
 
-            ((SuperHeroe) modelo.get(jl_super.getSelectedIndex())).setNombre(JOptionPane.showInputDialog("Ingrese el nuevo nombre"));
-            ((SuperHeroe) modelo.get(jl_super.getSelectedIndex())).setPoder(JOptionPane.showInputDialog("Ingrese el nuevo poder"));
-            ((SuperHeroe) modelo.get(jl_super.getSelectedIndex())).setDeblilidad(JOptionPane.showInputDialog("Ingrese la nueva debilidad"));
-            ((SuperHeroe) modelo.get(jl_super.getSelectedIndex())).setFuerza(Integer.parseInt(JOptionPane.showInputDialog("Ingrese la nueva fuerza")));
-            ((SuperHeroe) modelo.get(jl_super.getSelectedIndex())).setAgilidad(Integer.parseInt(JOptionPane.showInputDialog("Ingrese la nueva agilidad fisica")));
-            ((SuperHeroe) modelo.get(jl_super.getSelectedIndex())).setMente(Integer.parseInt(JOptionPane.showInputDialog("Ingrese la nueva agilidad mental")));
+                modelo.addElement(new SuperHeroe(nombre, poder, debilidad, new Escuadrones(), fuerza, agilidad, mente));
 
-            jl_super.setModel(modelo);
+                jl_super.setModel(modelo);
 
-        }
-    }//GEN-LAST:event_lista_modificar_superActionPerformed
+                squad1.add(new SuperHeroe(nombre, poder, debilidad, new Escuadrones(), fuerza, agilidad, mente));
+                JOptionPane.showMessageDialog(this, "Su super heroe fue agregado con exito!");
+                tf_super_a.setText("");
+                tf_super_debil.setText("");
+                tf_super_f.setText("");
+                tf_super_m.setText("");
+                tf_super_nom.setText("");
+                tf_super_poder.setText("");
+                jTabbedPane1.setEnabledAt(2, true);
 
-    private void lista_eliminar_vilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lista_eliminar_vilActionPerformed
-        // TODO add your handling code here:
-        if (jl_villano.getSelectedIndex() >= 0) {
-            DefaultListModel modelo = (DefaultListModel) jl_villano.getModel();
-
-            modelo.remove(jl_villano.getSelectedIndex());
-            squad2.remove(jl_villano.getSelectedIndex());
-
-            jl_villano.setModel(modelo);
-        }
-    }//GEN-LAST:event_lista_eliminar_vilActionPerformed
-
-    private void lista_modificar_vilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lista_modificar_vilActionPerformed
-        // TODO add your handling code here:
-        if (jl_villano.getSelectedIndex() >= 0) {
-            DefaultListModel modelo = (DefaultListModel) jl_villano.getModel();
-
-            ((Villano) modelo.get(jl_villano.getSelectedIndex())).setNombre(JOptionPane.showInputDialog("Ingrese el nuevo nombre"));
-            ((Villano) modelo.get(jl_villano.getSelectedIndex())).setPoder(JOptionPane.showInputDialog("Ingrese el nuevo poder"));
-            ((Villano) modelo.get(jl_villano.getSelectedIndex())).setDeblilidad(JOptionPane.showInputDialog("Ingrese la nueva debilidad"));
-            ((Villano) modelo.get(jl_villano.getSelectedIndex())).setFuerza(Integer.parseInt(JOptionPane.showInputDialog("Ingrese la nueva fuerza")));
-            ((Villano) modelo.get(jl_villano.getSelectedIndex())).setAgilidad(Integer.parseInt(JOptionPane.showInputDialog("Ingrese la nueva agilidad fisica")));
-            ((Villano) modelo.get(jl_villano.getSelectedIndex())).setMente(Integer.parseInt(JOptionPane.showInputDialog("Ingrese la nueva agilidad mental")));
-
-            jl_villano.setModel(modelo);
-
-        }
-    }//GEN-LAST:event_lista_modificar_vilActionPerformed
-
-    private void jl_villanoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_villanoMouseClicked
-        // TODO add your handling code here:
-        if (jl_villano.getSelectedIndex() >= 0) {
-            if (evt.isMetaDown()) {
-                popup_lista2.show(evt.getComponent(), evt.getX(), evt.getY());
+            } else {
+                JOptionPane.showMessageDialog(this, "Sus stats no tienen la suma de 100!");
             }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Ocurrio un error!");
         }
-    }//GEN-LAST:event_jl_villanoMouseClicked
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+        // TODO add your handling code here:
+        DefaultListModel modelo2 = (DefaultListModel) jl_squad2.getModel();
+        DefaultListModel modelo = (DefaultListModel) jl_squad1.getModel();
+
+        if (jl_squad1.getSelectedIndex() >= 0 && jl_squad2.getSelectedIndex() >= 0) {
+
+            int op = Integer.parseInt(JOptionPane.showInputDialog(this, "1. Duelo de fuerza \n2. Duelo de Habilidad Fisica \n3. Duelo de Habilidad Mental"));
+            switch (op) {
+                case 1: {
+
+                    DefaultTreeModel modelo_arbol = (DefaultTreeModel) jt_squads.getModel();
+                    DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) modelo_arbol.getRoot();
+
+                    int superheroe = ((Escuadrones) modelo.get(jl_squad1.getSelectedIndex())).getLider().getFuerza();
+                    int villano = ((Escuadrones) modelo2.get(jl_squad2.getSelectedIndex())).getLider().getFuerza();
+
+                    if (villano == superheroe) {
+                        JOptionPane.showMessageDialog(this, "El lider del escuadron " + ((Escuadrones) modelo.get(jl_squad1.getSelectedIndex())).getNombre() + " con fuerza de " + superheroe + " empato con el "
+                                + "lider del escuadron " + ((Escuadrones) modelo2.get(jl_squad2.getSelectedIndex())).getNombre() + " con una fuerza de " + villano + " en un duelo de fuerza");
+
+                    } else if (superheroe > villano) {
+                        JOptionPane.showMessageDialog(this, "El lider del escuadron " + ((Escuadrones) modelo.get(jl_squad1.getSelectedIndex())).getNombre() + " con fuerza de " + superheroe + " le gano al "
+                                + "lider del escuadron " + ((Escuadrones) modelo2.get(jl_squad2.getSelectedIndex())).getNombre() + " con una fuerza de " + villano + " en un duelo de fuerza");
+
+                        modelo2.remove(jl_squad2.getSelectedIndex());
+                        jl_squad2.setModel(modelo2);
+
+                        for (int i = 0; i < raiz.getChildCount(); i++) {
+                            if (raiz.getChildAt(i).getIndex(raiz) == jl_squad2.getSelectedIndex()) {
+                                raiz.remove(i);
+                            }
+                        }
+
+                    } else {
+
+                        JOptionPane.showMessageDialog(this, "El lider del escuadron " + ((Escuadrones) modelo2.get(jl_squad2.getSelectedIndex())).getNombre() + " con fuerza de " + villano + " le gano al "
+                                + "lider del escuadron " + ((Escuadrones) modelo.get(jl_squad1.getSelectedIndex())).getNombre() + " con una fuerza de " + superheroe + " en un duelo de fuerza");
+
+                        modelo.remove(jl_squad1.getSelectedIndex());
+                        jl_squad1.setModel(modelo);
+
+                        for (int i = 0; i < raiz.getChildCount(); i++) {
+                            if (raiz.getChildAt(i).getIndex(raiz) == jl_squad1.getSelectedIndex()) {
+                                raiz.remove(i);
+                            }
+                        }
+
+                    }
+
+                    break;
+                }
+                case 2: {
+                    DefaultTreeModel modelo_arbol = (DefaultTreeModel) jt_squads.getModel();
+                    DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) modelo_arbol.getRoot();
+
+                    int superheroe = ((Escuadrones) modelo.get(jl_squad1.getSelectedIndex())).getLider().getAgilidad();
+                    int villano = ((Escuadrones) modelo2.get(jl_squad2.getSelectedIndex())).getLider().getAgilidad();
+
+                    if (villano == superheroe) {
+                        JOptionPane.showMessageDialog(this, "El lider del escuadron " + ((Escuadrones) modelo.get(jl_squad1.getSelectedIndex())).getNombre() + " con fuerza de " + superheroe + " empato con el "
+                                + "lider del escuadron " + ((Escuadrones) modelo2.get(jl_squad2.getSelectedIndex())).getNombre() + " con una fuerza de " + villano + " en un duelo de habilidad fisica");
+
+                    } else if (superheroe > villano) {
+                        JOptionPane.showMessageDialog(this, "El lider del escuadron " + ((Escuadrones) modelo.get(jl_squad1.getSelectedIndex())).getNombre() + " con fuerza de " + superheroe + " le gano al "
+                                + "lider del escuadron " + ((Escuadrones) modelo2.get(jl_squad2.getSelectedIndex())).getNombre() + " con una fuerza de " + villano + " en un duelo de habilidad fisica");
+                        modelo2.remove(jl_squad2.getSelectedIndex());
+                        jl_squad2.setModel(modelo2);
+
+                        for (int i = 0; i < raiz.getChildCount(); i++) {
+                            if (raiz.getChildAt(i).getIndex(raiz) == jl_squad2.getSelectedIndex()) {
+                                raiz.remove(i);
+                            }
+                        }
+                    } else {
+
+                        JOptionPane.showMessageDialog(this, "El lider del escuadron " + ((Escuadrones) modelo2.get(jl_squad2.getSelectedIndex())).getNombre() + " con fuerza de " + villano + " le gano al "
+                                + "lider del escuadron " + ((Escuadrones) modelo.get(jl_squad1.getSelectedIndex())).getNombre() + " con una fuerza de " + superheroe + " en un duelo de habilidad fisica");
+                        modelo.remove(jl_squad1.getSelectedIndex());
+                        jl_squad1.setModel(modelo);
+
+                        for (int i = 0; i < raiz.getChildCount(); i++) {
+                            if (raiz.getChildAt(i).getIndex(raiz) == jl_squad1.getSelectedIndex()) {
+                                raiz.remove(i);
+                            }
+                        }
+                    }
+
+                    break;
+                }
+                case 3: {
+                    DefaultTreeModel modelo_arbol = (DefaultTreeModel) jt_squads.getModel();
+                    DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) modelo_arbol.getRoot();
+                    int superheroe = ((Escuadrones) modelo.get(jl_squad1.getSelectedIndex())).getLider().getMente();
+                    int villano = ((Escuadrones) modelo2.get(jl_squad2.getSelectedIndex())).getLider().getMente();
+
+                    if (villano == superheroe) {
+                        JOptionPane.showMessageDialog(this, "El lider del escuadron " + ((Escuadrones) modelo.get(jl_squad1.getSelectedIndex())).getNombre() + " con fuerza de " + superheroe + " empato con el "
+                                + "lider del escuadron " + ((Escuadrones) modelo2.get(jl_squad2.getSelectedIndex())).getNombre() + " con una fuerza de " + villano + " en un duelo de habilidad mental");
+
+                    } else if (superheroe > villano) {
+                        JOptionPane.showMessageDialog(this, "El lider del escuadron " + ((Escuadrones) modelo.get(jl_squad1.getSelectedIndex())).getNombre() + " con fuerza de " + superheroe + " le gano al "
+                                + "lider del escuadron " + ((Escuadrones) modelo2.get(jl_squad2.getSelectedIndex())).getNombre() + " con una fuerza de " + villano + " en un duelo de habilidad mental");
+                        modelo2.remove(jl_squad2.getSelectedIndex());
+                        jl_squad2.setModel(modelo2);
+
+                        for (int i = 0; i < raiz.getChildCount(); i++) {
+                            if (raiz.getChildAt(i).getIndex(raiz) == jl_squad2.getSelectedIndex()) {
+                                raiz.remove(i);
+                            }
+                        }
+                    } else {
+
+                        JOptionPane.showMessageDialog(this, "El lider del escuadron " + ((Escuadrones) modelo2.get(jl_squad2.getSelectedIndex())).getNombre() + " con fuerza de " + villano + " le gano al "
+                                + "lider del escuadron " + ((Escuadrones) modelo.get(jl_squad1.getSelectedIndex())).getNombre() + " con una fuerza de " + superheroe + " en un duelo de habilidad mental");
+                        modelo.remove(jl_squad1.getSelectedIndex());
+                        jl_squad1.setModel(modelo);
+
+                        for (int i = 0; i < raiz.getChildCount(); i++) {
+                            if (raiz.getChildAt(i).getIndex(raiz) == jl_squad1.getSelectedIndex()) {
+                                raiz.remove(i);
+                            }
+                        }
+                    }
+
+                    break;
+                }
+                default:
+                    JOptionPane.showMessageDialog(this, "No puede elegir algo afuera de las opciones!");
+            }
+
+        }
+    }//GEN-LAST:event_jButton4MouseClicked
 
     /**
      * @param args the command line arguments
@@ -831,6 +962,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -852,7 +984,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
