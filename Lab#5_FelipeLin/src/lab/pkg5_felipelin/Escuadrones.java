@@ -17,7 +17,7 @@ public class Escuadrones extends Heroe{
     protected String base;
     protected String lider;
     protected String tipo;
-    private ArrayList lista = new ArrayList();
+    private ArrayList<Heroe> lista = new ArrayList();
 
     public Escuadrones() {
     }
@@ -61,13 +61,15 @@ public class Escuadrones extends Heroe{
         this.tipo = tipo;
     }
 
-    public ArrayList getLista() {
+    public ArrayList<Heroe> getLista() {
         return lista;
     }
 
-    public void setLista(ArrayList lista) {
+    public void setLista(ArrayList<Heroe> lista) {
         this.lista = lista;
     }
+
+   
     
     
 

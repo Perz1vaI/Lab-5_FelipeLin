@@ -362,30 +362,63 @@ public class Menu extends javax.swing.JFrame {
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
-        String nombre, base, lider, tipo;
+        String nombre, base, lider, tipo = "";
+        String c = "", confirm = "s";
         try {
 
             if (rb_squad_sup.isSelected()) {
-                base = tf_squad_base.getText();
-                nombre = tf_squad_nom.getText();
-                lider = tf_squad_lider.getText();
                 tipo = "SuperHeroe";
 
-                squad.add(new Escuadrones(nombre, base, lider, tipo));
-
             } else if (rb_squad_vil.isSelected()) {
-                base = tf_squad_base.getText();
-                nombre = tf_squad_nom.getText();
-                lider = tf_squad_lider.getText();
-                tipo = "Villano";
 
-                squad.add(new Escuadrones(nombre, base, lider, tipo));
+                tipo = "Villano";
 
             }
 
+            base = tf_squad_base.getText();
+            nombre = tf_squad_nom.getText();
+            lider = tf_squad_lider.getText();
+            squad.add(new Escuadrones(nombre, base, lider, tipo));
+
+            if (tipo.equals("SuperHeroe")) {
+                for (SuperHeroe su : squad1) {
+                    c += squad1.indexOf(su) + " ";
+                    c += su;
+                    c += "\n";
+
+                }
+                while ("s".equals(confirm)) {
+
+                    int pos = Integer.parseInt(JOptionPane.showInputDialog(this, c + "\nIngrese la posicion del super heroe que quiere agregar"));
+                    ((Escuadrones) squad.get(lista1)).getLista().add(squad1.get(pos));
+                    confirm = JOptionPane.showInputDialog(this, "Quiere agregar otro superheroe? [s/n]");
+
+                }
+            } else if (tipo.equals("Villano")) {
+                for (Villano su : squad2) {
+                    c += squad1.indexOf(su) + " ";
+                    c += su;
+                    c += "\n";
+
+                }
+                while ("s".equals(confirm)) {
+
+                    int pos = Integer.parseInt(JOptionPane.showInputDialog(this, c + "\nIngrese la posicion del super heroe que quiere agregar"));
+                    ((Escuadrones) squad.get(lista1)).getLista().add(squad1.get(pos));
+                    JOptionPane.showInputDialog(this, c + "\nIngrese la posicion del super heroe que quiere agregar");
+
+                }
+            }
+            JOptionPane.showMessageDialog(this, "Agrego con exito el escuadron");
+            tf_squad_base.setText("");
+            tf_squad_lider.setText("");
+            tf_squad_nom.setText("");
+
         } catch (Exception e) {
+            e.printStackTrace();
             JOptionPane.showMessageDialog(this, "Ocurrio un error!");
         }
+        lista1++;
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
@@ -395,8 +428,8 @@ public class Menu extends javax.swing.JFrame {
         int suma;
         try {
             fuerza = Integer.parseInt(tf_super_f.getText());
-            agilidad = Integer.parseInt(tf_super_f.getText());
-            mente = Integer.parseInt(tf_super_f.getText());
+            agilidad = Integer.parseInt(tf_super_a.getText());
+            mente = Integer.parseInt(tf_super_m.getText());
 
             suma = fuerza + agilidad + mente;
 
@@ -431,8 +464,8 @@ public class Menu extends javax.swing.JFrame {
         int suma;
         try {
             fuerza = Integer.parseInt(tf_vil_f.getText());
-            agilidad = Integer.parseInt(tf_vil_f.getText());
-            mente = Integer.parseInt(tf_vil_f.getText());
+            agilidad = Integer.parseInt(tf_vil_a.getText());
+            mente = Integer.parseInt(tf_vil_m.getText());
 
             suma = fuerza + agilidad + mente;
 
@@ -545,4 +578,5 @@ public class Menu extends javax.swing.JFrame {
     ArrayList<Heroe> squad = new ArrayList();
     ArrayList<SuperHeroe> squad1 = new ArrayList();
     ArrayList<Villano> squad2 = new ArrayList();
+    int lista1 = 0, lista2;
 }
