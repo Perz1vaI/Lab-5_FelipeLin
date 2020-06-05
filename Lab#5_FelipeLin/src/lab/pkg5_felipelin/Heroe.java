@@ -14,14 +14,14 @@ public class Heroe {
     protected String poder;
     protected String deblilidad;
     protected Escuadrones team;
-    protected double fuerza;
-    protected double agilidad;
-    protected double mente;
+    protected int fuerza;
+    protected int agilidad;
+    protected int mente;
 
     public Heroe() {
     }
 
-    public Heroe(String poder, String deblilidad, Escuadrones team, double fuerza, double agilidad, double mente) {
+    public Heroe(String poder, String deblilidad, Escuadrones team, int fuerza, int agilidad, int mente) {
         this.poder = poder;
         this.deblilidad = deblilidad;
         this.team = team;
@@ -54,27 +54,27 @@ public class Heroe {
         this.team = team;
     }
 
-    public double getFuerza() {
+    public int getFuerza() {
         return fuerza;
     }
 
-    public void setFuerza(double fuerza) {
+    public void setFuerza(int fuerza) {
         this.fuerza = fuerza;
     }
 
-    public double getAgilidad() {
+    public int getAgilidad() {
         return agilidad;
     }
 
-    public void setAgilidad(double agilidad) {
+    public void setAgilidad(int agilidad) {
         this.agilidad = agilidad;
     }
 
-    public double getMente() {
+    public int getMente() {
         return mente;
     }
 
-    public void setMente(double mente) {
+    public void setMente(int mente) {
         this.mente = mente;
     }
 

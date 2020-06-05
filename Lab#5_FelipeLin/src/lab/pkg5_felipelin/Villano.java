@@ -16,7 +16,7 @@ public class Villano extends Heroe {
     public Villano() {
     }
 
-    public Villano(String nombre, String poder, String deblilidad, Escuadrones team, double fuerza, double agilidad, double mente) {
+    public Villano(String nombre, String poder, String deblilidad, Escuadrones team, int fuerza, int agilidad, int mente) {
         super(poder, deblilidad, team, fuerza, agilidad, mente);
         this.nombre = nombre;
     }

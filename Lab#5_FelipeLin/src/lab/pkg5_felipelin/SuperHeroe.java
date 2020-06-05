@@ -16,7 +16,7 @@ public class SuperHeroe extends Heroe {
     public SuperHeroe() {
     }
 
-    public SuperHeroe(String nombre, String poder, String deblilidad, Escuadrones team, double fuerza, double agilidad, double mente) {
+    public SuperHeroe(String nombre, String poder, String deblilidad, Escuadrones team, int fuerza, int agilidad, int mente) {
         super(poder, deblilidad, team, fuerza, agilidad, mente);
         this.nombre = nombre;
     }
