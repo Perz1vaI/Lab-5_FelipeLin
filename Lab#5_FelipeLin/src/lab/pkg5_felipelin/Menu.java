@@ -881,7 +881,7 @@ public class Menu extends javax.swing.JFrame {
 
                         for (int i = 0; i < raiz.getChildCount(); i++) {
                             if (raiz.getChildAt(i).getIndex(raiz) == jl_squad2.getSelectedIndex()) {
-                                raiz.removeAllChildren();
+                                raiz.remove(i);
                             }
                         }
                         modelo_arbol.reload();
@@ -896,7 +896,7 @@ public class Menu extends javax.swing.JFrame {
 
                         for (int i = 0; i < raiz.getChildCount(); i++) {
                             if (raiz.getChildAt(i).getIndex(raiz) == jl_squad1.getSelectedIndex()) {
-                                raiz.removeAllChildren();
+                                raiz.remove(i);
                             }
                         }
                         modelo_arbol.reload();
@@ -924,7 +924,7 @@ public class Menu extends javax.swing.JFrame {
 
                         for (int i = 0; i < raiz.getChildCount(); i++) {
                             if (raiz.getChildAt(i).getIndex(raiz) == jl_squad2.getSelectedIndex()) {
-                                raiz.removeAllChildren();
+                                raiz.remove(i);
                             }
                         }
                         modelo_arbol.reload();
@@ -938,7 +938,7 @@ public class Menu extends javax.swing.JFrame {
 
                         for (int i = 0; i < raiz.getChildCount(); i++) {
                             if (raiz.getChildAt(i).getIndex(raiz) == jl_squad1.getSelectedIndex()) {
-                                raiz.removeAllChildren();
+                                raiz.remove(i);
                             }
                         }
                         modelo_arbol.reload();
@@ -965,7 +965,7 @@ public class Menu extends javax.swing.JFrame {
 
                         for (int i = 0; i < raiz.getChildCount(); i++) {
                             if (raiz.getChildAt(i).getIndex(raiz) == jl_squad2.getSelectedIndex()) {
-                                raiz.removeAllChildren();
+                                raiz.remove(i);
                             }
                         }
                         modelo_arbol.reload();
@@ -979,7 +979,7 @@ public class Menu extends javax.swing.JFrame {
 
                         for (int i = 0; i < raiz.getChildCount(); i++) {
                             if (raiz.getChildAt(i).getIndex(raiz) == jl_squad1.getSelectedIndex()) {
-                                raiz.removeAllChildren();
+                                raiz.remove(i);
                             }
                         }
                         modelo_arbol.reload();
