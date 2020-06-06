@@ -664,8 +664,8 @@ public class Menu extends javax.swing.JFrame {
                     }
                     int pos2 = Integer.parseInt(JOptionPane.showInputDialog(this, t + "\nIngrese la posicion del villano que quiere hacer lider"));
                     lider = squad2.get(pos2);
-                    nodo_lider = new DefaultMutableTreeNode(squad1.get(pos2));
-                    nodo_poderL = new DefaultMutableTreeNode(squad1.get(pos2).getDeblilidad());
+                    nodo_lider = new DefaultMutableTreeNode(squad2.get(pos2));
+                    nodo_poderL = new DefaultMutableTreeNode(squad2.get(pos2).getDeblilidad());
 
                     squad2.remove(pos2);
                     break;
@@ -697,7 +697,7 @@ public class Menu extends javax.swing.JFrame {
                         ((Escuadrones) squad.get(lista1)).getLista().add(squad1.get(pos));
                         confirm = JOptionPane.showInputDialog(this, "Quiere agregar otro superheroe? [s/n]");
                         nodo_persona = new DefaultMutableTreeNode(((Escuadrones) squad.get(lista1)).getLista().get(pos));
-                        nodo_poder = new DefaultMutableTreeNode(((Escuadrones) squad.get(lista1)).getLista().get(lista1).getPoder());
+                        nodo_poder = new DefaultMutableTreeNode(((Escuadrones) squad.get(lista1)).getLista().get(pos).getPoder());
                         nodo_persona.add(nodo_poder);
                         nodo_escuadron.add(nodo_persona);
 
@@ -716,9 +716,9 @@ public class Menu extends javax.swing.JFrame {
 
                         int pos = Integer.parseInt(JOptionPane.showInputDialog(this, c + "\nIngrese la posicion del villano que quiere agregar"));
                         ((Escuadrones) squad.get(lista1)).getLista().add(squad2.get(pos));
-                        JOptionPane.showInputDialog(this, c + "\nIngrese la posicion del villano que quiere agregar");
-                        nodo_persona = new DefaultMutableTreeNode(((Escuadrones) squad.get(lista1)).getLista().add(squad1.get(pos)));
-                        nodo_poder = new DefaultMutableTreeNode(((Escuadrones) squad.get(lista1)).getLista().get(lista1).getDeblilidad());
+                        confirm = JOptionPane.showInputDialog(this, "Quiere agregar otro superheroe? [s/n]");
+                        nodo_persona = new DefaultMutableTreeNode(((Escuadrones) squad.get(lista1)).getLista().get(pos));
+                        nodo_poder = new DefaultMutableTreeNode(((Escuadrones) squad.get(lista1)).getLista().get(pos).getDeblilidad());
                         nodo_persona.add(nodo_poder);
                         nodo_escuadron.add(nodo_persona);
 
@@ -740,7 +740,6 @@ public class Menu extends javax.swing.JFrame {
             modelo_arbol.reload();
 
         } catch (Exception e) {
-            e.printStackTrace();
             JOptionPane.showMessageDialog(this, "Ocurrio un error!");
         }
 
@@ -882,9 +881,10 @@ public class Menu extends javax.swing.JFrame {
 
                         for (int i = 0; i < raiz.getChildCount(); i++) {
                             if (raiz.getChildAt(i).getIndex(raiz) == jl_squad2.getSelectedIndex()) {
-                                raiz.remove(i);
+                                raiz.removeAllChildren();
                             }
                         }
+                        modelo_arbol.reload();
 
                     } else {
 
@@ -896,9 +896,10 @@ public class Menu extends javax.swing.JFrame {
 
                         for (int i = 0; i < raiz.getChildCount(); i++) {
                             if (raiz.getChildAt(i).getIndex(raiz) == jl_squad1.getSelectedIndex()) {
-                                raiz.remove(i);
+                                raiz.removeAllChildren();
                             }
                         }
+                        modelo_arbol.reload();
 
                     }
 
@@ -923,9 +924,11 @@ public class Menu extends javax.swing.JFrame {
 
                         for (int i = 0; i < raiz.getChildCount(); i++) {
                             if (raiz.getChildAt(i).getIndex(raiz) == jl_squad2.getSelectedIndex()) {
-                                raiz.remove(i);
+                                raiz.removeAllChildren();
                             }
                         }
+                        modelo_arbol.reload();
+
                     } else {
 
                         JOptionPane.showMessageDialog(this, "El lider del escuadron " + ((Escuadrones) modelo2.get(jl_squad2.getSelectedIndex())).getNombre() + " con fuerza de " + villano + " le gano al "
@@ -935,9 +938,11 @@ public class Menu extends javax.swing.JFrame {
 
                         for (int i = 0; i < raiz.getChildCount(); i++) {
                             if (raiz.getChildAt(i).getIndex(raiz) == jl_squad1.getSelectedIndex()) {
-                                raiz.remove(i);
+                                raiz.removeAllChildren();
                             }
                         }
+                        modelo_arbol.reload();
+
                     }
 
                     break;
@@ -960,9 +965,11 @@ public class Menu extends javax.swing.JFrame {
 
                         for (int i = 0; i < raiz.getChildCount(); i++) {
                             if (raiz.getChildAt(i).getIndex(raiz) == jl_squad2.getSelectedIndex()) {
-                                raiz.remove(i);
+                                raiz.removeAllChildren();
                             }
                         }
+                        modelo_arbol.reload();
+
                     } else {
 
                         JOptionPane.showMessageDialog(this, "El lider del escuadron " + ((Escuadrones) modelo2.get(jl_squad2.getSelectedIndex())).getNombre() + " con fuerza de " + villano + " le gano al "
@@ -972,9 +979,11 @@ public class Menu extends javax.swing.JFrame {
 
                         for (int i = 0; i < raiz.getChildCount(); i++) {
                             if (raiz.getChildAt(i).getIndex(raiz) == jl_squad1.getSelectedIndex()) {
-                                raiz.remove(i);
+                                raiz.removeAllChildren();
                             }
                         }
+                        modelo_arbol.reload();
+
                     }
 
                     break;
