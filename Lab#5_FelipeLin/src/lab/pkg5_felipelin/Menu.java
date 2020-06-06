@@ -40,6 +40,8 @@ public class Menu extends javax.swing.JFrame {
         lista_modificar_super = new javax.swing.JMenuItem();
         lista_eliminar_super = new javax.swing.JMenuItem();
         popup_arbol = new javax.swing.JPopupMenu();
+        arbol_datos = new javax.swing.JMenuItem();
+        arbol_lider = new javax.swing.JMenuItem();
         popup_lista2 = new javax.swing.JPopupMenu();
         lista_modificar_vil = new javax.swing.JMenuItem();
         lista_eliminar_vil = new javax.swing.JMenuItem();
@@ -102,7 +104,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
 
-        lista_modificar_super.setText("jMenuItem1");
+        lista_modificar_super.setText("Modificar");
         lista_modificar_super.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lista_modificar_superActionPerformed(evt);
@@ -110,7 +112,7 @@ public class Menu extends javax.swing.JFrame {
         });
         popup_lista.add(lista_modificar_super);
 
-        lista_eliminar_super.setText("jMenuItem2");
+        lista_eliminar_super.setText("Eliminar");
         lista_eliminar_super.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lista_eliminar_superActionPerformed(evt);
@@ -118,7 +120,18 @@ public class Menu extends javax.swing.JFrame {
         });
         popup_lista.add(lista_eliminar_super);
 
-        lista_modificar_vil.setText("jMenuItem1");
+        arbol_datos.setText("Ver Datos");
+        arbol_datos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                arbol_datosActionPerformed(evt);
+            }
+        });
+        popup_arbol.add(arbol_datos);
+
+        arbol_lider.setText("Asignar Lider");
+        popup_arbol.add(arbol_lider);
+
+        lista_modificar_vil.setText("Modificar");
         lista_modificar_vil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lista_modificar_vilActionPerformed(evt);
@@ -126,7 +139,7 @@ public class Menu extends javax.swing.JFrame {
         });
         popup_lista2.add(lista_modificar_vil);
 
-        lista_eliminar_vil.setText("jMenuItem2");
+        lista_eliminar_vil.setText("Eliminar");
         lista_eliminar_vil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lista_eliminar_vilActionPerformed(evt);
@@ -134,7 +147,7 @@ public class Menu extends javax.swing.JFrame {
         });
         popup_lista2.add(lista_eliminar_vil);
 
-        squad1_modificar.setText("jMenuItem1");
+        squad1_modificar.setText("Modificar");
         squad1_modificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 squad1_modificarActionPerformed(evt);
@@ -142,7 +155,7 @@ public class Menu extends javax.swing.JFrame {
         });
         popup_lista_squad1.add(squad1_modificar);
 
-        squad1_eliminar.setText("jMenuItem2");
+        squad1_eliminar.setText("Eliminar");
         squad1_eliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 squad1_eliminarActionPerformed(evt);
@@ -150,7 +163,7 @@ public class Menu extends javax.swing.JFrame {
         });
         popup_lista_squad1.add(squad1_eliminar);
 
-        squad2_modficar.setText("jMenuItem3");
+        squad2_modficar.setText("Modificar");
         squad2_modficar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 squad2_modficarActionPerformed(evt);
@@ -158,7 +171,7 @@ public class Menu extends javax.swing.JFrame {
         });
         popup_lista_squad2.add(squad2_modficar);
 
-        squad2_eliminar.setText("jMenuItem4");
+        squad2_eliminar.setText("Eliminar");
         squad2_eliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 squad2_eliminarActionPerformed(evt);
@@ -426,6 +439,11 @@ public class Menu extends javax.swing.JFrame {
 
         javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Escuadrones");
         jt_squads.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jt_squads.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jt_squadsMouseClicked(evt);
+            }
+        });
         jScrollPane5.setViewportView(jt_squads);
 
         jLabel17.setText("SuperHeroe");
@@ -1036,6 +1054,28 @@ public class Menu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_squad2_modficarActionPerformed
 
+    private void arbol_datosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_arbol_datosActionPerformed
+        // TODO add your handling code here:
+        DefaultTreeModel modelo = (DefaultTreeModel) jt_squads.getModel();
+
+        JOptionPane.showMessageDialog(this, persona_seleccionada);
+    }//GEN-LAST:event_arbol_datosActionPerformed
+
+    private void jt_squadsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jt_squadsMouseClicked
+        // TODO add your handling code here:
+        DefaultTreeModel modelo = (DefaultTreeModel) jt_squads.getModel();
+        if (evt.isMetaDown()) {
+            int row = jt_squads.getClosestRowForLocation(evt.getX(), evt.getY());
+            jt_squads.setSelectionRow(row);
+            Object v1 = jt_squads.getSelectionPath().getLastPathComponent();
+            nodo_seleccionado = (DefaultMutableTreeNode) v1;
+            if (nodo_seleccionado.getUserObject() instanceof Heroe) {
+                persona_seleccionada = (Heroe) nodo_seleccionado.getUserObject();
+                popup_arbol.show(evt.getComponent(), evt.getX(), evt.getY());
+            }
+        }
+    }//GEN-LAST:event_jt_squadsMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1072,6 +1112,8 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem arbol_datos;
+    private javax.swing.JMenuItem arbol_lider;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -1142,5 +1184,7 @@ public class Menu extends javax.swing.JFrame {
     ArrayList<Heroe> squad = new ArrayList();
     ArrayList<SuperHeroe> squad1 = new ArrayList();
     ArrayList<Villano> squad2 = new ArrayList();
-    int lista1 = 0, lista2;
+    int lista1 = 0;
+    DefaultMutableTreeNode nodo_seleccionado;
+    Heroe persona_seleccionada;
 }

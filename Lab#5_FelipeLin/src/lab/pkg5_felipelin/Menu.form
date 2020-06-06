@@ -12,7 +12,7 @@
       <SubComponents>
         <MenuItem class="javax.swing.JMenuItem" name="lista_modificar_super">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jMenuItem1"/>
+            <Property name="text" type="java.lang.String" value="Modificar"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="lista_modificar_superActionPerformed"/>
@@ -20,7 +20,7 @@
         </MenuItem>
         <MenuItem class="javax.swing.JMenuItem" name="lista_eliminar_super">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jMenuItem2"/>
+            <Property name="text" type="java.lang.String" value="Eliminar"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="lista_eliminar_superActionPerformed"/>
@@ -33,6 +33,21 @@
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
         <Property name="useNullLayout" type="boolean" value="true"/>
       </Layout>
+      <SubComponents>
+        <MenuItem class="javax.swing.JMenuItem" name="arbol_datos">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Ver Datos"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="arbol_datosActionPerformed"/>
+          </Events>
+        </MenuItem>
+        <MenuItem class="javax.swing.JMenuItem" name="arbol_lider">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Asignar Lider"/>
+          </Properties>
+        </MenuItem>
+      </SubComponents>
     </Container>
     <Container class="javax.swing.JPopupMenu" name="popup_lista2">
 
@@ -42,7 +57,7 @@
       <SubComponents>
         <MenuItem class="javax.swing.JMenuItem" name="lista_modificar_vil">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jMenuItem1"/>
+            <Property name="text" type="java.lang.String" value="Modificar"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="lista_modificar_vilActionPerformed"/>
@@ -50,7 +65,7 @@
         </MenuItem>
         <MenuItem class="javax.swing.JMenuItem" name="lista_eliminar_vil">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jMenuItem2"/>
+            <Property name="text" type="java.lang.String" value="Eliminar"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="lista_eliminar_vilActionPerformed"/>
@@ -66,7 +81,7 @@
       <SubComponents>
         <MenuItem class="javax.swing.JMenuItem" name="squad1_modificar">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jMenuItem1"/>
+            <Property name="text" type="java.lang.String" value="Modificar"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="squad1_modificarActionPerformed"/>
@@ -74,7 +89,7 @@
         </MenuItem>
         <MenuItem class="javax.swing.JMenuItem" name="squad1_eliminar">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jMenuItem2"/>
+            <Property name="text" type="java.lang.String" value="Eliminar"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="squad1_eliminarActionPerformed"/>
@@ -90,7 +105,7 @@
       <SubComponents>
         <MenuItem class="javax.swing.JMenuItem" name="squad2_modficar">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jMenuItem3"/>
+            <Property name="text" type="java.lang.String" value="Modificar"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="squad2_modficarActionPerformed"/>
@@ -98,7 +113,7 @@
         </MenuItem>
         <MenuItem class="javax.swing.JMenuItem" name="squad2_eliminar">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jMenuItem4"/>
+            <Property name="text" type="java.lang.String" value="Eliminar"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="squad2_eliminarActionPerformed"/>
@@ -745,6 +760,9 @@
                       <TreeModel code="Escuadrones&#xa;"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jt_squadsMouseClicked"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
